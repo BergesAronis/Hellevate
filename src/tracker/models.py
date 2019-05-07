@@ -1,6 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+MUSCLE_GROUPS = (
+    (1, _("Chest")),
+    (2, _("Back")),
+    (3, _("Abs")),
+    (4, _("Quad")),
+    (5, _("Triceps")),
+    (6, _("Biceps")),
+    (7, _("Calves")),
+    (8, _("Hamstrings")),
+    (9, _("Trapezius"))
+)
+
 # Create your models here.
 class Day(models.Model):
     user = models.ForeignKey(User, related_name='day', on_delete=models.CASCADE)
@@ -32,3 +44,9 @@ class Set(models.Model):
 
     def __str__(self):
         return "set " + str(self.set_number)
+
+class Exercise(models.Model):
+    name = models.CharField(max_length=30)
+    primary_muscle = models.IntegerField(choices=MUSCLE_GROUPS, default=1)
+    secondary_muscle = models.IntegerField(choices=MUSCLE_GROUPS, default=1)
+    additional_muscle = models.IntegerField(choices=MUSCLE_GROUPS, default=1)
