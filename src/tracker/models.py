@@ -2,15 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 
 MUSCLE_GROUPS = (
-    (1, _("Chest")),
-    (2, _("Back")),
-    (3, _("Abs")),
-    (4, _("Quad")),
-    (5, _("Triceps")),
-    (6, _("Biceps")),
-    (7, _("Calves")),
-    (8, _("Hamstrings")),
-    (9, _("Trapezius"))
+    (1, "Chest"),
+    (2, "Back"),
+    (3, "Abs"),
+    (4, "Quad"),
+    (5, "Triceps"),
+    (6, "Biceps"),
+    (7, "Calves"),
+    (8, "Hamstrings"),
+    (9, "Trapezius"),
 )
 
 # Create your models here.
